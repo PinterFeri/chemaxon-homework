@@ -1,0 +1,28 @@
+Dear Candidate!
+
+The program code in this Eclipse project contains a small painter program that intended to provide some editing function
+for the users.
+
+A user of the program would like to be able to have a simple selection tool, so that she is able to mark the points of
+ the shown structure. The marked points needs to be highlighted on the drawing area with yellow background color, which
+ is under the drawing and 2-3 pixel wider than the actually drawn lines. If both points of an edge is selected then she
+ considers the edge also selected. She also would like to unmark marked points with this same tool, so if a marked point
+ is marked again, it sould be deselected. She would like to mark the points by clicking on them or near to them. After
+ asking her she stated she feels a 5 pixel radius would be enough but she need to try this out, and she may change her
+ mind on this. 
+
+A user would like to have the possibility to change the drawing, by clicking on a point of the structure and move it by
+dragging the mouse (hold down left button, move the mouse and then release the button), so that she will be able to
+modify the structure and see if it looks better that way.
+
+This functionalities are required to be available via a menu in the application called Edit. The first function needs to
+be called as Select, the second as Move. The Move function has to work only on an edge, and does not need to consider if
+a point is selected or not. 
+
+The application has some interfaces ready to implement these tools for the user, please conform with those interfaces,
+if you feel you need to add some more functionalities you are free to do so, and are allowed to modify any parts of the
+application to implement the required features. 
+
+And as a fun fact, I need to mention that we know the "geom" package contains much more code then needed, and it is
+maybe a bit messy, but please leave those classes alone and do not modify them except it is absolutely necessary. They
+are copied with slight modifications from the real codebase, just to show you that nothing is perfect in the world.
