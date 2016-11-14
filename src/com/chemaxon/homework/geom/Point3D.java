@@ -41,8 +41,27 @@ public class Point3D {
         y = 0;
         z = 0;
     }
+    
+    private boolean selected;
+    private boolean dragged;
+    
+    public boolean isDragged() {
+		return dragged;
+	}
 
-    /**
+	public void setDragged(boolean dragged) {
+		this.dragged = dragged;
+	}
+
+	public boolean isSelected() {
+		return selected;
+	}
+
+	public void setSelected(boolean selected) {
+		this.selected = selected;
+	}
+
+	/**
      * Copy constructor.
      * @param p   the point to copy
      */

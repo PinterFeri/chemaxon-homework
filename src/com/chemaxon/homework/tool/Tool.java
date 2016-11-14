@@ -9,6 +9,8 @@
  */
 package com.chemaxon.homework.tool;
 
+import java.awt.event.MouseEvent;
+
 import com.chemaxon.homework.AppContext;
 import com.chemaxon.homework.Registerable;
 
@@ -19,4 +21,5 @@ public interface Tool extends Registerable{
     public void addNotify();
     
     public void removeNotify();
+    
 }

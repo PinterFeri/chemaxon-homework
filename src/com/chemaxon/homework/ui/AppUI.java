@@ -11,6 +11,8 @@ package com.chemaxon.homework.ui;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.Action;
 import javax.swing.JFrame;
@@ -20,36 +22,30 @@ import javax.swing.JMenuItem;
 import javax.swing.WindowConstants;
 
 import com.chemaxon.homework.command.ActionBuilder;
+import com.chemaxon.homework.command.Command;
 import com.chemaxon.homework.command.ExitCommand;
+import com.chemaxon.homework.command.MoveCommand;
+import com.chemaxon.homework.command.SelectCommand;
 import com.chemaxon.homework.model.Model;
 
 public class AppUI {
-
+	static class mouse extends MouseAdapter{
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			// TODO Auto-generated method stub
+			super.mouseClicked(e);
+		}
+	}
+	
     public void createAndShowUI() {
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         Canvas canvas = createCanvas();
         frame.add(canvas);
-        frame.setJMenuBar(buildMenu(canvas));
+        frame.setJMenuBar(new Menu(canvas));
         frame.setMinimumSize(new Dimension(400,400));
         frame.pack();
         frame.setVisible(true);
-    }
-
-    private JMenuBar buildMenu(Canvas canvas) {
-        JMenuBar menubar = new JMenuBar();
-        menubar.add(buildMainMenu(canvas));
-        return menubar;
-    }
-
-    private JMenu buildMainMenu(Canvas canvas) {
-        ExitCommand exitCommand = new ExitCommand();
-        exitCommand.register(canvas);
-        Action a = new ActionBuilder().forCommand(exitCommand).withContext(canvas).build();
-        
-        JMenu mainMenu = new JMenu("File");
-        mainMenu.add(new JMenuItem(a));
-        return mainMenu;
     }
 
     private Canvas createCanvas() {
